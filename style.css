@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+a {
+  color: #ffccff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #ffffff;
+}
+header {
+  position: relative;
+  height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+header .overlay {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.4;
+}
+.portals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #181818;
+}
+.portal {
+  width: 250px;
+  margin: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.portal img {
+  width: 100%;
+  border: 3px solid #333;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+.portal img:hover {
+  transform: scale(1.05);
+}
+.portal a {
+  display: block;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+.portal a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: -1;
+}
+.portal a:hover::before {
+  width: 300%;
+  height: 300%;
+}
+@media (max-width: 768px) {
+  .portals {
+    flex-direction: column;
+    align-items: center;
+  }
+  .portal {
+    width: 80%;
+  }
+}
