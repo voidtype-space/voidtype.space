@@ -21,13 +21,15 @@ html, body {
   color: white;
 }
 
-/* Header text */
 header {
-  position: relative;
-  z-index: 1;
-  padding: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
+  z-index: 1;
+  padding: 20px;
 }
 
 /* Portals section layout */
