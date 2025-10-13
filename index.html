@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VOIDTYPE.space</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Fullscreen video background -->
-  <video autoplay muted loop id="bg-video">
-    <source src="assets/cosmic_enchantment_loop.mp4" type="video/mp4">
-  </video>  <!-- Fullscreen video background -->
-  <video autoplay muted loop id="bg-video">
-    <source src="assets/cosmic enchantment_loop.mp4" type="video/mp4">
+  <!-- Single fullscreen video background -->
+  <video autoplay muted loop id="bg-video" playsinline>
+    <!-- rename file to avoid spaces, e.g., cosmic_enchantment_loop.mp4 -->
+    <source src="assets/cosmic_enchantment_loop.mp4" type="video/mp4" />
   </video>
-  <header>
-    <div class="overlay">
+
+  <header class="hero">
+    <div class="hero-content">
       <h1>
-        Ah, you've made it, welcome.<br>
-        We're glad you're finally here.<br>
-        Please feel free to explore,<br>
+        Ah, you've made it, welcome.<br />
+        We're glad you're finally here.<br />
+        Please feel free to explore,<br />
         this is just as much a place for you as it is for everyone.
       </h1>
     </div>
   </header>
 
-  <section class="portals">
-    <div class="portal" id="where-am-i">
-      <img src="assets/portal1.png" alt="Door - Where am I?">
-      <a href="#where">...Where am I?</a>
-    </div>
-    <div class="portal" id="who-are-you">
-      <img src="assets/portal2.png" alt="Door - Who are you?">
-      <a href="#who">...Who are you?</a>
-    </div>
-    <div class="portal" id="what-is-this-place">
-      <img src="assets/portal3.png" alt="Door - What is this place?">
-      <a href="#what">...What is this place?</a>
-    </div>
-    <div class="portal" id="why-are-you-doing-this">
-      <img src="assets/portal4.png" alt="Door - Why are you doing this?">
-      <a href="#why">Why are you doing this?</a>
-    </div>
-    <div class="portal" id="when-did-you-realize">
-      <img src="assets/portal5.png" alt="Door - When did you realize?">
-      <a href="#when">When did you realize?</a>
-    </div>
-  </section>
+  <main class="container">
+    <section class="portals">
+      <article class="portal">
+        <img src="assets/portal1.png" alt="Door — Where am I?" />
+        <a class="portal-link" href="#where">…Where am I?</a>
+      </article>
+
+      <article class="portal">
+        <img src="assets/portal2.png" alt="Door — Who are you?" />
+        <a class="portal-link" href="#who">…Who are you?</a>
+      </article>
+
+      <article class="portal">
+        <img src="assets/portal3.png" alt="Door — What is this place?" />
+        <a class="portal-link" href="#what">…What is this place?</a>
+      </article>
+
+      <article class="portal">
+        <img src="assets/portal4.png" alt="Door — Why are you doing this?" />
+        <a class="portal-link" href="#why">Why are you doing this?</a>
+      </article>
+
+      <article class="portal">
+        <img src="assets/portal5.png" alt="Door — When did you realize?" />
+        <a class="portal-link" href="#when">When did you realize?</a>
+      </article>
+    </section>
+
+    <!-- Optional anchor targets so links don't 404-scroll -->
+    <section id="where"></section>
+    <section id="who"></section>
+    <section id="what"></section>
+    <section id="why"></section>
+    <section id="when"></section>
+  </main>
 </body>
 </html>
