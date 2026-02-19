@@ -2,30 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale="1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VOIDTYPE.space</title>
+  <meta name="description" content="VOIDTYPE — You're not who you think we are." />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <!-- Single fullscreen video background -->
-  <video autoplay muted loop id="bg-video" playsinline>
-    <!-- rename file to avoid spaces, e.g., cosmic_enchantment_loop.mp4 -->
-    <source src="assets/Cosmic enchantment_loop.mp4" type="video/mp4" />
+  <video autoplay muted loop id="bg-video" playsinline preload="metadata" aria-hidden="true">
+    <source src="assets/cosmic_enchantment_loop.mp4" type="video/mp4" />
   </video>
 
   <header class="hero">
     <div class="hero-content">
+      <p class="kicker">VOIDTYPE</p>
       <h1>
         Ah, you've made it, welcome.<br />
         We're glad you're finally here.<br />
         Please feel free to explore,<br />
         this is just as much a place for you as it is for everyone.
       </h1>
+
+      <p class="tagline">You’re not who you think we are.</p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#portals">Enter</a>
+        <a class="btn" href="#what">What is this?</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="portals">
+    <section class="portals" id="portals" aria-label="Portals">
       <article class="portal">
         <img src="assets/portal1.png" alt="Door — Where am I?" />
         <a class="portal-link" href="#where">…Where am I?</a>
@@ -52,12 +60,53 @@
       </article>
     </section>
 
-    <!-- Optional anchor targets so links don't 404-scroll -->
-    <section id="where"></section>
-    <section id="who"></section>
-    <section id="what"></section>
-    <section id="why"></section>
-    <section id="when"></section>
+    <section class="panel" id="where">
+      <h2>Where am I?</h2>
+      <p>
+        A place built from artifacts: images, objects, electronics, memories—reassembled into comfort.
+        The outside is quiet. The inside is opal.
+      </p>
+    </section>
+
+    <section class="panel" id="who">
+      <h2>Who are you?</h2>
+      <p>
+        VOIDTYPE is a brand, a practice, and a story engine. Upcycled tech. Handmade garments.
+        Open-source process. A constellation of identities—held together by empathy.
+      </p>
+    </section>
+
+    <section class="panel" id="what">
+      <h2>What is this place?</h2>
+      <p>
+        It’s a gallery, a workshop, and a portal into <em>Her Opaline Empathy</em>.
+        If you want proof, you’ll get it. If you want lore, you’ll drown in it.
+      </p>
+    </section>
+
+    <section class="panel" id="why">
+      <h2>Why are you doing this?</h2>
+      <p>
+        Because comfort is armor. Because trauma is real. Because recycling can be sacred.
+        Because “learn it yourself” is the only way to keep your sovereignty.
+      </p>
+    </section>
+
+    <section class="panel" id="when">
+      <h2>When did you realize?</h2>
+      <p>
+        The moment the shards started reflecting back. The moment the void stopped feeling empty.
+        The moment art became a way to return something to the world—cleaner than you found it.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> VOIDTYPE. Built locally. Loved globally.</p>
+    </footer>
   </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
