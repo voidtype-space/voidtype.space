@@ -155,9 +155,9 @@ body::before {
   background: var(--glass);
 
   /* NEW darker outer border */
-  border: 8px solid var(--stroke);
+  border: 2px solid var(--stroke);
   box-shadow:
-    0 0 0 12px var(--stroke-soft),  /* soft outer halo */
+    0 0 0 6px var(--stroke-soft),  /* soft outer halo */
     var(--shadow);
 
   backdrop-filter: blur(12px);
