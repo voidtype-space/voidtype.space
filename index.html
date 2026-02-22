@@ -6,7 +6,7 @@
   <title>VOIDTYPE.space</title>
   <meta name="description" content="VOIDTYPE — You're not who you think we are." />
 
-  <!-- Fonts (fast + clean). Swap later if you want. -->
+  <!-- Fonts (loads from Google; no downloads needed) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -46,3 +46,142 @@
     <div class="scroll-hint" aria-hidden="true">
       <span>Scroll</span>
       <span class="chev">⌄</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="portals" id="portals" aria-label="Portals">
+      <div class="section-head">
+        <h2>Portals</h2>
+        <p>Pick a door. Each one is a thread. Some threads lead somewhere else.</p>
+      </div>
+
+      <div class="portal-grid">
+        <article class="portal" data-portal="where">
+          <a class="portal-hit" href="#where" aria-label="Where am I?">
+            <img src="assets/portal1.png" alt="Door — Where am I?" loading="lazy" />
+            <div class="portal-meta">
+              <p class="portal-kicker">Door I</p>
+              <h3 class="portal-title">…Where am I?</h3>
+              <p class="portal-whisper">A place made of artifacts.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="portal" data-portal="who">
+          <a class="portal-hit" href="#who" aria-label="Who are you?">
+            <img src="assets/portal2.png" alt="Door — Who are you?" loading="lazy" />
+            <div class="portal-meta">
+              <p class="portal-kicker">Door II</p>
+              <h3 class="portal-title">…Who are you?</h3>
+              <p class="portal-whisper">A brand. A practice. A story engine.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="portal" data-portal="what">
+          <a class="portal-hit" href="#what" aria-label="What is this place?">
+            <img src="assets/portal3.png" alt="Door — What is this place?" loading="lazy" />
+            <div class="portal-meta">
+              <p class="portal-kicker">Door III</p>
+              <h3 class="portal-title">…What is this place?</h3>
+              <p class="portal-whisper">Gallery / workshop / portal.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="portal" data-portal="why">
+          <a class="portal-hit" href="#why" aria-label="Why are you doing this?">
+            <img src="assets/portal4.png" alt="Door — Why are you doing this?" loading="lazy" />
+            <div class="portal-meta">
+              <p class="portal-kicker">Door IV</p>
+              <h3 class="portal-title">Why are you doing this?</h3>
+              <p class="portal-whisper">Because comfort can be armor.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="portal" data-portal="when">
+          <a class="portal-hit" href="#when" aria-label="When did you realize?">
+            <img src="assets/portal5.png" alt="Door — When did you realize?" loading="lazy" />
+            <div class="portal-meta">
+              <p class="portal-kicker">Door V</p>
+              <h3 class="portal-title">When did you realize?</h3>
+              <p class="portal-whisper">When the shards reflected back.</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal-stack" id="about" aria-label="About">
+      <div class="section-head">
+        <h2>Fragments</h2>
+        <p>Not an explanation. More like a set of coordinates.</p>
+      </div>
+
+      <section class="reveal" id="where">
+        <details>
+          <summary>Where am I?</summary>
+          <p>
+            A place built from artifacts: images, objects, electronics, memories—reassembled into comfort.
+            The outside is quiet. The inside is opal.
+          </p>
+        </details>
+      </section>
+
+      <section class="reveal" id="who">
+        <details>
+          <summary>Who are you?</summary>
+          <p>
+            VOIDTYPE is a brand, a practice, and a story engine. Upcycled tech. Handmade garments.
+            Open-source process. A constellation of identities—held together by empathy.
+          </p>
+        </details>
+      </section>
+
+      <section class="reveal" id="what">
+        <details>
+          <summary>What is this place?</summary>
+          <p>
+            It’s a gallery, a workshop, and a portal into <em>Her Opaline Empathy</em>.
+            If you want proof, you’ll get it. If you want lore, you’ll drown in it.
+          </p>
+        </details>
+      </section>
+
+      <section class="reveal" id="why">
+        <details>
+          <summary>Why are you doing this?</summary>
+          <p>
+            Because comfort is armor. Because trauma is real. Because recycling can be sacred.
+            Because “learn it yourself” is the only way to keep your sovereignty.
+          </p>
+        </details>
+      </section>
+
+      <section class="reveal" id="when">
+        <details>
+          <summary>When did you realize?</summary>
+          <p>
+            The moment the shards started reflecting back. The moment the void stopped feeling empty.
+            The moment art became a way to return something to the world—cleaner than you found it.
+          </p>
+        </details>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-mark">© <span id="year"></span> VOIDTYPE</p>
+        <p class="footer-whisper">Built locally. Loved globally.</p>
+        <a class="footer-top" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
