@@ -95,7 +95,7 @@ body::before {
   width: 110%;
   height: 110%;
   object-fit: cover;
-  opacity: .88;
+  opacity: .64;
   transform: scale(1.05);
   position: relative;
 }
