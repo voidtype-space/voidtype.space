@@ -80,7 +80,7 @@ body::before {
   border-radius: 50% / 45%;
   overflow: hidden;
 
-  background: rgba(12,14,28,.40); /* 18% transparency */
+  background: rgba(12,14,28,.80); /* 18% transparency */
   backdrop-filter: blur(10px);
 
   border: 1px solid rgba(160,190,255,.25);
@@ -95,7 +95,7 @@ body::before {
   width: 110%;
   height: 110%;
   object-fit: cover;
-  opacity: .64;
+  opacity: .20;
   transform: scale(1.05);
   position: relative;
 }
