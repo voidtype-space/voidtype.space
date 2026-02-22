@@ -3,6 +3,11 @@
 html, body { margin: 0; padding: 0; }
 
 :root{
+  /* Brand accent colors */
+  --accent-purple: #8b5cf6;  /* rich violet */
+  --accent-teal: #14f1d9;    /* electric teal */
+  --accent-soft: linear-gradient(90deg, #8b5cf6, #14f1d9);
+  
   /* softer grayscale text */
   --text: rgba(220, 225, 235, .84);
   --muted: rgba(200, 210, 225, .66);
@@ -331,8 +336,12 @@ body::before {
   font-size: clamp(18px, 2.2vw, 22px);
   font-weight: 900;
   letter-spacing: .2px;
-  color: rgba(225,230,240,.84);
-  text-shadow: 0 10px 24px rgba(0,0,0,.30);
+
+  background: var(--accent-soft);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 8px 24px rgba(0,0,0,.35);
 }
 
 .portal-desc{
