@@ -68,6 +68,7 @@ body::before {
 }
 
 .hero-content {
+  margin-top: 18vh;
   max-width: 980px;
   padding: 0 clamp(12px, 2.5vw, 24px);
 }
