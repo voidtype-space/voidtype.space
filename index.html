@@ -15,14 +15,37 @@
     <source src="assets/cosmic_enchantment_loop.mp4" type="video/mp4" />
   </video>
 
+  <!-- Queen Anna mirror clip-path definition -->
+  <svg width="0" height="0" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- "Queen Anna" oval-ish cheval mirror silhouette -->
+      <clipPath id="queenanna" clipPathUnits="objectBoundingBox">
+        <!--
+          Normalized (0..1) path.
+          Top is rounder, slight waist, fuller bottom.
+        -->
+        <path d="
+          M 0.50 0.02
+          C 0.70 0.02, 0.88 0.10, 0.92 0.22
+          C 0.96 0.40, 0.96 0.56, 0.93 0.68
+          C 0.90 0.80, 0.84 0.90, 0.78 0.95
+          C 0.70 0.99, 0.60 1.00, 0.50 1.00
+          C 0.40 1.00, 0.30 0.99, 0.22 0.95
+          C 0.16 0.90, 0.10 0.80, 0.07 0.68
+          C 0.04 0.56, 0.04 0.40, 0.08 0.22
+          C 0.12 0.10, 0.30 0.02, 0.50 0.02
+          Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
   <!-- HERO -->
   <header class="hero" id="top">
     <div class="hero-content">
-      
       <div class="hero-oval">
         <img src="assets/voidtype_header.png" alt="VOIDTYPE" />
       </div>
-      
+
       <h1 class="hero-title">
         Ah, you’ve made it.<br />
         Welcome.
