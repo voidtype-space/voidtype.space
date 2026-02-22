@@ -7,8 +7,8 @@ html, body { margin: 0; padding: 0; }
   --muted: rgba(210, 220, 245, .78);
 
   /* portal glass is intentionally lighter now */
-  --glass: rgba(10, 12, 22, .12);
-  --glass-2: rgba(10, 12, 22, .12);
+  --glass: rgba(10, 12, 22, .02);
+  --glass-2: rgba(10, 12, 22, .02);
 
   --stroke: rgba(160, 190, 255, .28);
   --stroke-2: rgba(160, 190, 255, .20);
