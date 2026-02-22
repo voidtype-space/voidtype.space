@@ -1,9 +1,18 @@
-/* ---- Reset / base ---- */
+/* =========================
+   RESET / BASE
+========================= */
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
 
-:root{
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
   --bg: #070a12;
   --ink: #e8e8f0;
   --muted: rgba(232,232,240,.78);
@@ -15,17 +24,20 @@ html { scroll-behavior: smooth; }
   --shadow-2: 0 28px 70px rgba(0,0,0,.48);
 }
 
-body{
+body {
   color: var(--ink);
   background: var(--bg);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* IMPORTANT: allow vertical scroll */
   overflow-x: hidden;
 }
 
-a { color: inherit; }
+/* =========================
+   VIDEO BACKGROUND
+========================= */
 
-/* ---- Video background ---- */
-#bg-video{
+#bg-video {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -36,8 +48,7 @@ a { color: inherit; }
   pointer-events: none;
 }
 
-/* Dark film over video (readability) */
-body::before{
+body::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -47,15 +58,21 @@ body::before{
   z-index: -1;
 }
 
-/* ---- Container ---- */
-.container{
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
   width: min(1120px, 100%);
   margin-inline: auto;
   padding: clamp(14px, 3vw, 26px);
 }
 
-/* ---- Hero ---- */
-.hero{
+/* =========================
+   HERO
+========================= */
+
+.hero {
   min-height: 92vh;
   display: grid;
   place-items: center;
@@ -64,12 +81,12 @@ body::before{
   position: relative;
 }
 
-.hero-content{
+.hero-content {
   max-width: 920px;
   padding: 0 clamp(12px, 3vw, 28px);
 }
 
-.kicker{
+.kicker {
   margin: 0 0 14px;
   letter-spacing: .42em;
   font-weight: 800;
@@ -77,16 +94,16 @@ body::before{
   font-family: "Space Grotesk", Inter, system-ui, sans-serif;
 }
 
-.hero-title{
+.hero-title {
   margin: 0;
-  line-height: 1.02;
+  line-height: 1.05;
   font-weight: 700;
   font-size: clamp(34px, 6vw, 72px);
   text-shadow: 0 14px 34px rgba(0,0,0,.55);
   font-family: "Space Grotesk", Inter, system-ui, sans-serif;
 }
 
-.hero-subtitle{
+.hero-subtitle {
   margin: 18px auto 0;
   max-width: 62ch;
   font-size: clamp(16px, 2vw, 20px);
@@ -94,14 +111,17 @@ body::before{
   color: var(--muted);
 }
 
-.tagline{
+.tagline {
   margin: 24px 0 0;
   font-size: 14px;
   opacity: .78;
 }
 
-/* Buttons */
-.hero-actions{
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-actions {
   margin-top: 26px;
   display: flex;
   gap: 12px;
@@ -109,7 +129,7 @@ body::before{
   flex-wrap: wrap;
 }
 
-.btn{
+.btn {
   display: inline-block;
   padding: 12px 18px;
   border-radius: 999px;
@@ -119,14 +139,26 @@ body::before{
   border: 1px solid var(--stroke);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  transition: all .18s ease;
 }
 
-.btn:hover{
+.btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-2);
   border-color: var(--stroke-2);
 }
 
-.btn.primary{
-  border-color: rgba(110,220,220
+.btn.primary {
+  border-color: rgba(110,220,220,.55);
+}
+
+.btn.ghost {
+  background: rgba(12,14,28,.35);
+}
+
+/* =========================
+   SECTION HEAD
+========================= */
+
+.section-head {
+  margin: clamp(60px, 10vw,
