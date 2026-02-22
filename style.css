@@ -1,4 +1,34 @@
 /* =========================
+   LOCAL VARIABLE FONTS
+========================= */
+
+/* Inter - normal */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter - italic */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Space Grotesk */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* =========================
    RESET / BASE
 ========================= */
 * { box-sizing: border-box; }
