@@ -1,70 +1,33 @@
-/* =========================================================
-   VOIDTYPE.space — style.css (clean v2)
-   - Local fonts (Inter + Space Grotesk)
-   - Video background + film
-   - Header mark (assets/voidtype_header.png)
-   - Queen Anne mirror portals (clip-path)
-========================================================= */
-
-/* -------------------------
-   Local variable fonts
-------------------------- */
-@font-face {
-  font-family: "Inter";
-  src: url("fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Space Grotesk";
-  src: url("fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* -------------------------
-   Reset / base
-------------------------- */
+/* ---- Reset / base ---- */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-a { color: inherit; }
 
 :root{
-  --text: #e8e8f0;
-  --muted: rgba(232,232,240,.82);
-  --panel: rgba(10,12,22,.58);
-  --panel-2: rgba(12,14,28,.62);
-  --stroke: rgba(100,120,190,.30);
-  --stroke-2: rgba(170,200,255,.38);
-  --glow: rgba(140,210,255,.22);
-  --glow-2: rgba(110,220,220,.18);
+  --text: rgba(236, 242, 255, .92);
+  --muted: rgba(210, 220, 245, .78);
 
-  --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  /* portal glass is intentionally lighter now */
+  --glass: rgba(10, 12, 22, .28);
+  --glass-2: rgba(10, 12, 22, .18);
 
-  --container: 1120px;
+  --stroke: rgba(160, 190, 255, .28);
+  --stroke-2: rgba(160, 190, 255, .20);
+
+  --shadow: 0 18px 55px rgba(0,0,0,.35);
+  --shadow2: 0 26px 80px rgba(0,0,0,.45);
 }
 
-body{
-  font-family: var(--font-sans);
+body {
   color: var(--text);
   background: transparent;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   overflow-x: hidden;
 }
 
-/* -------------------------
-   Video background
-------------------------- */
-#bg-video{
+a { color: inherit; }
+
+/* ---- Video background ---- */
+#bg-video {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -75,95 +38,79 @@ body{
   pointer-events: none;
 }
 
-/* Readability film */
-body::before{
-  content:"";
+/* Film for readability */
+body::before {
+  content: "";
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, rgba(0,0,0,.08) 0 35%, rgba(0,0,0,.72) 82%),
-    linear-gradient(to bottom, rgba(0,0,0,.30), rgba(0,0,0,.60));
+    radial-gradient(ellipse at center, rgba(0,0,0,.10) 0 35%, rgba(0,0,0,.62) 80%),
+    linear-gradient(to bottom, rgba(0,0,0,.30), rgba(0,0,0,.55));
   z-index: -1;
 }
 
-/* -------------------------
-   Layout container
-------------------------- */
-.container{
-  width: min(100%, var(--container));
+/* ---- Container ---- */
+.container {
+  width: min(100%, 1120px);
   margin-inline: auto;
-  padding: clamp(14px, 3vw, 28px);
+  padding: clamp(14px, 3vw, 26px);
 }
 
-/* =========================================================
-   HERO
-========================================================= */
-.hero{
-  position: relative;
+/* ---- Hero ---- */
+.hero {
   min-height: 82vh;
   display: grid;
   place-items: center;
   text-align: center;
-  padding: clamp(44px, 7vw, 110px) 0;
+  padding: clamp(56px, 7vw, 110px) 0;
+  position: relative;
 }
 
-/* Floating header mark (your PNG) */
-.hero::before{
-  content:"";
-  position: absolute;
-  top: clamp(18px, 3.5vw, 30px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(420px, 76vw);
-  height: clamp(38px, 7vw, 72px);
-  background-image: url("assets/voidtype_header.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: .92;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.55));
-  pointer-events: none;
-}
-
-.hero-content{
-  padding: 0 clamp(12px, 2.5vw, 26px);
+.hero-content {
   max-width: 980px;
-  margin-top: clamp(28px, 7vw, 78px); /* make space for header mark */
+  padding: 0 clamp(12px, 2.5vw, 24px);
 }
 
-.kicker{
+.brand-header{
+  display: block;
+  width: min(560px, 78vw);
+  height: auto;
+  margin: 0 auto 22px;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.40));
+  opacity: .95;
+}
+
+.kicker {
   margin: 0 0 10px;
-  letter-spacing: .42em;
-  font-weight: 650;
-  opacity: .90;
-  font-family: var(--font-display);
-  text-transform: uppercase;
+  letter-spacing: .35em;
+  font-weight: 700;
+  opacity: .85;
 }
 
-.hero-title{
+.hero-title {
   margin: 0;
-  line-height: 1.04;
-  font-family: var(--font-display);
-  font-weight: 650;
-  font-size: clamp(34px, 6.2vw, 66px);
-  text-shadow: 0 14px 34px rgba(0,0,0,.62);
+  line-height: 1.02;
+  font-weight: 900;
+  font-size: clamp(34px, 6vw, 66px);
+  text-shadow: 0 10px 30px rgba(0,0,0,.55);
 }
 
-.hero-subtitle{
-  margin: 14px auto 0;
-  max-width: 58ch;
-  font-size: clamp(14px, 2vw, 18px);
+.hero-subtitle {
+  margin: 16px 0 0;
   color: var(--muted);
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1.5;
 }
 
-.tagline{
-  margin: 18px 0 0;
-  font-size: clamp(15px, 2.1vw, 19px);
-  opacity: .92;
+.tagline {
+  margin: 16px 0 0;
+  font-size: 14px;
+  opacity: .90;
+  letter-spacing: .02em;
 }
 
 /* Buttons */
-.hero-actions{
+.hero-actions {
   margin-top: 22px;
   display: flex;
   gap: 12px;
@@ -171,223 +118,174 @@ body::before{
   flex-wrap: wrap;
 }
 
-.btn{
+.btn {
   display: inline-block;
   padding: 12px 16px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 650;
-  font-family: var(--font-display);
-  background: rgba(12,14,28,.52);
-  border: 1px solid rgba(150,170,255,.32);
+  font-weight: 800;
+  background: rgba(12,14,28,.40);
+  border: 1px solid rgba(160,190,255,.30);
   backdrop-filter: blur(10px);
-  box-shadow: 0 18px 44px rgba(0,0,0,.30);
+  box-shadow: 0 16px 42px rgba(0,0,0,.25);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
 }
-.btn:hover{
+
+.btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 28px 62px rgba(0,0,0,.45);
+  box-shadow: 0 24px 62px rgba(0,0,0,.40);
   border-color: rgba(190,220,255,.55);
-  background: rgba(12,14,28,.62);
+  background: rgba(12,14,28,.50);
 }
-.btn.primary{
-  border-color: rgba(110,220,220,.50);
+
+.btn.primary {
+  border-color: rgba(120, 230, 220, .45);
+}
+
+.btn.ghost {
+  background: rgba(12,14,28,.22);
 }
 
 /* Scroll hint */
 .scroll-hint{
   position: absolute;
-  bottom: clamp(18px, 3vw, 28px);
   left: 50%;
+  bottom: 26px;
   transform: translateX(-50%);
+  opacity: .75;
   font-size: 13px;
-  color: rgba(232,232,240,.70);
-  letter-spacing: .08em;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
   user-select: none;
 }
-.scroll-hint .chev{
+.chev{
   display: inline-block;
-  margin-left: 6px;
   transform: translateY(-1px);
-  opacity: .8;
+  animation: bob 1.6s ease-in-out infinite;
+}
+@keyframes bob{
+  0%,100%{ transform: translateY(-1px); opacity: .7; }
+  50%{ transform: translateY(3px); opacity: 1; }
 }
 
-/* =========================================================
-   PORTALS — Queen Anne mirror silhouette
-========================================================= */
-.portals{
+/* ---- Portals ---- */
+.portals {
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(18px, 3.2vw, 34px);
-  justify-content: center;
-  align-items: flex-start;
-  margin-block: clamp(26px, 6vw, 70px);
+  flex-direction: column;
+  gap: clamp(26px, 4vw, 44px);
+  margin: clamp(18px, 5vw, 64px) auto 10px;
 }
 
-/* Card wrapper */
-.portal{
-  width: clamp(240px, 28vw, 340px);
-  display: grid;
-  gap: 12px;
-  justify-items: center;
+/* Each portal row */
+.portal {
+  display: flex;
+  gap: clamp(16px, 3vw, 26px);
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Mirror frame */
-.portal-mirror{
-  width: 100%;
-  aspect-ratio: 3 / 4.2;
+/* Zig-zag layout */
+.portal:nth-child(odd) { flex-direction: row; }
+.portal:nth-child(even) { flex-direction: row-reverse; }
+
+.portal-mirror {
+  width: clamp(220px, 32vw, 360px);
+  aspect-ratio: 3 / 4;
+  display: block;
   position: relative;
-  padding: 14px;
-  background: rgba(12,14,28,.48);
-  border: 1px solid rgba(170,200,255,.22);
-  box-shadow:
-    0 24px 70px rgba(0,0,0,.45),
-    0 0 0 1px rgba(255,255,255,.06) inset;
-  backdrop-filter: blur(10px);
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-
-  /* Queen Anne-ish silhouette */
-  clip-path: polygon(
-    50% 0%,
-    61% 2%,
-    70% 7%,
-    76% 14%,
-    80% 23%,
-    82% 34%,
-    83% 46%,
-    82% 58%,
-    79% 70%,
-    74% 80%,
-    66% 89%,
-    56% 95%,
-    50% 100%,
-    44% 95%,
-    34% 89%,
-    26% 80%,
-    21% 70%,
-    18% 58%,
-    17% 46%,
-    18% 34%,
-    20% 23%,
-    24% 14%,
-    30% 7%,
-    39% 2%
-  );
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
 }
 
+/* “Queen Anne-ish” silhouette: top more rounded + subtle waist illusion */
 .portal-mirror::before{
-  /* Metallic edge + faint opal glow */
   content:"";
-  position: absolute;
-  inset: 0;
-  clip-path: inherit;
-  background:
-    radial-gradient(ellipse at 50% 18%, rgba(120,220,255,.18), transparent 55%),
-    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.02) 45%, rgba(0,0,0,.20));
-  opacity: .95;
-  pointer-events: none;
+  position:absolute;
+  inset:-2px;
+  border-radius: 44px 44px 34px 34px;
+  /* inner highlight */
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.10),
+    inset 0 18px 50px rgba(255,255,255,.06),
+    inset 0 -28px 70px rgba(0,0,0,.28);
+  pointer-events:none;
 }
 
+/* Optional “frame lip” */
 .portal-mirror::after{
-  /* Inner bevel line */
   content:"";
-  position: absolute;
+  position:absolute;
   inset: 10px;
-  clip-path: inherit;
-  border: 1px solid rgba(200,220,255,.18);
-  box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset;
-  pointer-events: none;
+  border-radius: 40px 40px 30px 30px;
+  border: 1px solid rgba(180,210,255,.18);
+  pointer-events:none;
 }
 
 .portal-mirror:hover{
   transform: translateY(-4px);
-  border-color: rgba(200,230,255,.40);
-  box-shadow:
-    0 34px 88px rgba(0,0,0,.55),
-    0 0 40px var(--glow);
+  box-shadow: var(--shadow2);
+  border-color: rgba(190,220,255,.55);
+  background: rgba(10,12,22,.34);
 }
 
-/* Portal image inside mirror */
 .portal-mirror img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: inherit;
-  border-radius: 8px; /* subtle softening at edges */
-  filter: saturate(1.03) contrast(1.02);
   display: block;
+  transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.02);
 }
 
 /* Portal text block */
 .portal-meta{
-  width: 92%;
-  text-align: center;
-  background: rgba(10,12,22,.40);
-  border: 1px solid rgba(160,190,255,.18);
-  border-radius: 16px;
-  padding: 12px 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 18px 44px rgba(0,0,0,.30);
+  flex: 1;
+  max-width: 560px;
+  padding: 10px 2px;
 }
 
-.portal-link{
-  display: inline-block;
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 650;
+.portal-title{
+  margin: 0 0 8px;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 900;
   letter-spacing: .2px;
-  color: rgba(200,225,255,.96);
-  transition: transform .18s ease, opacity .18s ease;
-}
-.portal-link:hover{
-  transform: translateY(-1px);
-  opacity: .96;
+  text-shadow: 0 10px 24px rgba(0,0,0,.35);
 }
 
 .portal-desc{
-  margin: 8px 0 0;
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(232,232,240,.80);
-}
-
-/* =========================================================
-   PANELS
-========================================================= */
-.panel{
-  margin: 0 0 18px;
-  padding: 18px 18px;
-  border-radius: 20px;
-  background: var(--panel);
-  border: 1px solid rgba(160,190,255,.18);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 16px 46px rgba(0,0,0,.28);
-}
-.panel h2{
-  margin: 0 0 10px;
-  font-size: clamp(18px, 2.4vw, 22px);
-  font-family: var(--font-display);
-  font-weight: 650;
-  letter-spacing: .02em;
-}
-.panel p{
   margin: 0;
-  line-height: 1.65;
-  opacity: .92;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: clamp(14px, 1.7vw, 16px);
+  max-width: 56ch;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
-.footer{
+/* ---- Footer ---- */
+.footer {
   margin: 44px 0 18px;
   text-align: center;
-  opacity: .7;
+  opacity: .72;
   font-size: 14px;
 }
 
-/* Mobile tuning */
-@media (max-width: 520px){
-  .portal{ width: min(92vw, 360px); }
-  .hero{ min-height: 78vh; }
+/* ---- Mobile ---- */
+@media (max-width: 820px){
+  .portal,
+  .portal:nth-child(even),
+  .portal:nth-child(odd){
+    flex-direction: column;
+    text-align: center;
+  }
+  .portal-meta{
+    max-width: 680px;
+  }
+  .portal-desc{
+    margin-inline: auto;
+  }
 }
