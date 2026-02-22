@@ -71,13 +71,33 @@ body::before {
   padding: 0 clamp(12px, 2.5vw, 24px);
 }
 
-.brand-header{
-  display: block;
-  width: min(560px, 78vw);
-  height: auto;
-  margin: 0 auto 22px;
-  filter: drop-shadow(0 14px 28px rgba(0,0,0,.40));
-  opacity: .95;
+/* ---- Oval Header ---- */
+.hero-oval {
+  width: clamp(320px, 55vw, 720px);
+  aspect-ratio: 2.2 / 1;
+  margin: 0 auto 32px;
+
+  border-radius: 50% / 45%;
+  overflow: hidden;
+
+  background: rgba(12,14,28,.18); /* 18% transparency */
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(160,190,255,.25);
+  box-shadow: 0 24px 60px rgba(0,0,0,.45);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-oval img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  opacity: .88;
+  transform: scale(1.05);
+  position: relative;
 }
 
 .kicker {
